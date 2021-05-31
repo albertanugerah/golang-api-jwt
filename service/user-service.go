@@ -19,7 +19,7 @@ type userService struct {
 
 func (service userService) Update(user dto.UserUpdateDTO) entity.User {
 	userToUpdate := entity.User{}
-	err := smapping.FillStruct(&userToUpdate,smapping.MapFields(user))
+	err := smapping.FillStruct(&userToUpdate,smapping.MapFields(&user))
 	if err != nil {
 		log.Fatalf("Failed map %v",err)
 	}
