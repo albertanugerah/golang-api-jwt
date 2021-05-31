@@ -20,21 +20,21 @@ type jwtCustomClaim struct {
 }
 
 type jwtService struct {
-	secrteKey 	string
-	issuer 		string
+	secreteKey string
+	issuer     string
 }
 
-func (j jwtService) GenerateToken(userID string) string {
+func (j jwtService) GenerateToken(UserID string) string {
 	claims := &jwtCustomClaim{
-		UserID:      "albert",
-		StandardClaims: jwt.StandardClaims{
+		UserID,
+		jwt.StandardClaims{
 			ExpiresAt: time.Now().AddDate(0,3,0).Unix(),
 			Issuer: j.issuer,
 			IssuedAt:time.Now().Unix(),
 		},
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256,claims)
-	t, err := token.SignedString([]byte(j.secrteKey))
+	t, err := token.SignedString([]byte(j.secreteKey))
 	if err != nil {
 		panic(err)
 	}
@@ -46,14 +46,14 @@ func (j jwtService) ValidateToken(token string) (*jwt.Token, error) {
 		if _,ok := tkn.Method.(*jwt.SigningMethodHMAC); !ok{
 			return nil,fmt.Errorf("Unexpected signing method %v", tkn.Header["alg"])
 		}
-		return []byte(j.secrteKey),nil
+		return []byte(j.secreteKey),nil
 	})
 }
 
 func NewJWTService() JWTService {
 	return &jwtService{
-		secrteKey: getSecretKey(),
-		issuer: "albertanugerah",
+		secreteKey: getSecretKey(),
+		issuer:     "albertanugerah",
 	}
 }
 

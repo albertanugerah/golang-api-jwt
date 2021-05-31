@@ -1,6 +1,7 @@
 package config
 
 import (
+	"AP/golang-api-jwt/entity"
 	"fmt"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
@@ -24,10 +25,10 @@ func SetupDatabaseConnection () *gorm.DB{
 	if err != nil {
 		panic("failed to create connection")
 	}
+	db.AutoMigrate(&entity.User{})
 	return db
 }
 
-//
 func CloseConnectionDatabase(db *gorm.DB)  {
 	dbSQL, err := db.DB()
 	if err != nil {
