@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"AP/golang-api-jwt/dto"
-	"AP/golang-api-jwt/helper"
-	"AP/golang-api-jwt/service"
+	"github.com/albertanugerah/golang-api-jwt/dto"
+	"github.com/albertanugerah/golang-api-jwt/helper"
+	"github.com/albertanugerah/golang-api-jwt/service"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"

@@ -1,9 +1,9 @@
 package service
 
 import (
-	"AP/golang-api-jwt/dto"
-	"AP/golang-api-jwt/entity"
-	"AP/golang-api-jwt/repository"
+	"github.com/albertanugerah/golang-api-jwt/dto"
+	"github.com/albertanugerah/golang-api-jwt/entity"
+	"github.com/albertanugerah/golang-api-jwt/repository"
 	"github.com/mashingan/smapping"
 	"golang.org/x/crypto/bcrypt"
 	"log"

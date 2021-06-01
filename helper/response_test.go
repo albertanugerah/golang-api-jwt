@@ -1,7 +1,7 @@
 package helper
 
 import (
-	"AP/golang-api-jwt/entity"
+	"github.com/albertanugerah/golang-api-jwt/entity"
 	"go/types"
 	"reflect"
 	"testing"

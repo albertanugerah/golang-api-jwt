@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"AP/golang-api-jwt/entity"
+	"github.com/albertanugerah/golang-api-jwt/entity"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 	"log"

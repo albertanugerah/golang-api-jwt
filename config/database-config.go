@@ -1,8 +1,8 @@
 package config
 
 import (
-	"AP/golang-api-jwt/entity"
 	"fmt"
+	"github.com/albertanugerah/golang-api-jwt/entity"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

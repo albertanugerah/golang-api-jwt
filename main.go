@@ -1,11 +1,11 @@
 package main
 
 import (
-	"AP/golang-api-jwt/config"
-	"AP/golang-api-jwt/controller"
-	"AP/golang-api-jwt/middleware"
-	"AP/golang-api-jwt/repository"
-	"AP/golang-api-jwt/service"
+	"github.com/albertanugerah/golang-api-jwt/config"
+	"github.com/albertanugerah/golang-api-jwt/controller"
+	"github.com/albertanugerah/golang-api-jwt/middleware"
+	"github.com/albertanugerah/golang-api-jwt/repository"
+	"github.com/albertanugerah/golang-api-jwt/service"
 	"github.com/gin-gonic/gin"
 )
 var (

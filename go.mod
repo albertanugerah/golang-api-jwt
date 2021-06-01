@@ -1,4 +1,4 @@
-module AP/golang-api-jwt
+module github.com/albertanugerah/golang-api-jwt
 
 go 1.16
 
