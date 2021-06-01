@@ -17,7 +17,7 @@ type userService struct {
 	userRepository repository.UserRepository
 }
 
-func (service userService) Update(user dto.UserUpdateDTO) entity.User {
+func (service *userService) Update(user dto.UserUpdateDTO) entity.User {
 	userToUpdate := entity.User{}
 	err := smapping.FillStruct(&userToUpdate,smapping.MapFields(&user))
 	if err != nil {
@@ -28,7 +28,7 @@ func (service userService) Update(user dto.UserUpdateDTO) entity.User {
 	return updatedUser
 }
 
-func (service userService) Profile(userID string) entity.User {
+func (service *userService) Profile(userID string) entity.User {
 	return service.userRepository.ProfileUser(userID)
 }
 

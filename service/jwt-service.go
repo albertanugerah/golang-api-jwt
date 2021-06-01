@@ -24,7 +24,7 @@ type jwtService struct {
 	issuer     string
 }
 
-func (j jwtService) GenerateToken(UserID string) string {
+func (j *jwtService) GenerateToken(UserID string) string {
 	claims := &jwtCustomClaim{
 		UserID,
 		jwt.StandardClaims{
@@ -41,7 +41,7 @@ func (j jwtService) GenerateToken(UserID string) string {
 	return t
 }
 
-func (j jwtService) ValidateToken(token string) (*jwt.Token, error) {
+func (j *jwtService) ValidateToken(token string) (*jwt.Token, error) {
 	return jwt.Parse(token, func(tkn *jwt.Token) (interface{}, error) {
 		if _,ok := tkn.Method.(*jwt.SigningMethodHMAC); !ok{
 			return nil,fmt.Errorf("Unexpected signing method %v", tkn.Header["alg"])
